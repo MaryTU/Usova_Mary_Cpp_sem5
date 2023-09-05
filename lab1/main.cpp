@@ -8,6 +8,12 @@ const string ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 const int LEN_ALPHABET = ALPHABET.length();
 const int LEN_STR = 1000;
 
+/*
+ * Случайный подбор символов для заданной строки
+ *
+ * @param word заданная строка.
+ * @return два значения: 1. Количество всех итераций; 2. Максимальное количество итераций на подбор одного символа.
+ */
 vector<int> guessTheWord(string& word);
 
 int main(){
