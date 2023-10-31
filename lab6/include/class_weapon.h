@@ -7,7 +7,7 @@ const int MIN_SHOOT_DAMAGE = 100;
 const int MAX_SHOOT_DAMAGE = 500;
 const std::vector<int> SIZES_OF_WEAPON_STORE = {65, 75, 100};
 // одна энная часть магазина одна очередь в секунду
-const int ENNAIA = 20;
+const int ENNAIA = 5;
 
 enum TypeShooting{
     SINGLE_SHOOTING,
