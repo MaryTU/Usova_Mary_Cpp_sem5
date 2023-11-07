@@ -264,7 +264,7 @@ void Library::modelingLibrary(std::vector<Visiter> visiters,int time_work){
                 int time_in_hour = (a.second - time_in_days*24*60)/60;
                 std::cout<<"At "<< time_in_days <<"d. "<<time_in_hour<<":"<<a.second%60
                     <<"\n\tvisiter "<<a.first<<" couldn't find a book suitable for him"
-                    <<"\n\t(age = "<<visiters[a.first].getAge()<<", genre is ";
+                    <<" (age = "<<visiters[a.first].getAge()<<", genre is ";
 
                 Genres f_g = visiters[a.first].getFavoriteGenres();
                 if(f_g == DETECTIVE) std::cout<<"detective";
@@ -279,7 +279,7 @@ void Library::modelingLibrary(std::vector<Visiter> visiters,int time_work){
                 else if(v_p == SMALL) std::cout<<"SMALL";
                 else if(v_p == ANY) std::cout<<"ANY";
 
-                std::cout<<"\n";
+                std::cout<<")\n";
                 // если не подошла книга отправляем посетителя куда подальше (удаляем его из очереди)
                 for (int t = 0; t < (int)visiter_who_do_action.size(); t++){
                     if(visiter_who_do_action[t] == a.first && actions[t] == GET_BOOK){//time_action[t] == a.second){
@@ -299,8 +299,23 @@ void Library::modelingLibrary(std::vector<Visiter> visiters,int time_work){
             int time_in_days1 = a.second/(24*60);
             int time_in_hour1 = (a.second - time_in_days1*24*60)/60;
             std::cout<<"At "<< time_in_days1 <<"d. "<<time_in_hour1<<":"<<a.second%60
-                <<"\n\tvisiter "<<a.first<<" took the book:"
-                <<"\n\t Book: \""<<this->catalog[num_book].getName()<<"\" "
+                <<"\n\tvisiter "<<a.first<<" took the book:"//;
+                <<"(age="<<visiters[a.first].getAge()<<", ";
+                
+                Genres f_g = visiters[a.first].getFavoriteGenres();
+                if(f_g == DETECTIVE) std::cout<<"detective";
+                else if(f_g == ROMANCE) std::cout<<"romance";
+                else if(f_g == FANTASY) std::cout<<"fantasy";
+                else if(f_g == SCIENCE_FICTION) std::cout<<"science fiction";
+
+                std::cout<<", volume preferences is ";
+                VolumePreferences v_p = visiters[a.first].getVolumePreferences();
+                if(v_p == BIG) std::cout<<"BIG";
+                else if(v_p == MEDIUM) std::cout<<"MEDIUM";
+                else if(v_p == SMALL) std::cout<<"SMALL";
+                else if(v_p == ANY) std::cout<<"ANY";
+                std::cout <<")";
+            std::cout<<"\n\t Book: \""<<this->catalog[num_book].getName()<<"\" "
                 <<this->catalog[num_book].getAuthor()<<", "
                 <<this->catalog[num_book].getQuantityOfPages()<<"pages\n";
 
