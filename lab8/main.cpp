@@ -47,7 +47,7 @@ int main()
     for (int i = 0; i < n; i++){
         int rand_value = rand()%26;
 
-        std::cout<<"\nadd "<<rand_value<<std::endl;
+        std::cout<<"\nadd "<<en_symb[rand_value]<<std::endl;
         queue_char.pushBack(en_symb[rand_value]);
 
         std::cout<<"is empty: "<<queue_char.isEmpty()<<"\t";
