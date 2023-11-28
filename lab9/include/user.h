@@ -14,11 +14,32 @@ class User{
         bool activity; // true - активный, false - не активный
         
     public:
+        /**
+         * @brief Empty construct a new User object
+         * 
+         */
         User(){};
+        /**
+         * @brief Construct a new User object
+         * 
+         * @param name 
+         * @param surname 
+         * @param patronymic 
+         * @param age 
+         * @param activity 
+         */
         User(std::string name,std::string surname,std::string patronymic, int age, bool activity);
+        /**
+         * @brief Destroy the User object
+         * 
+         */
         ~User(){};
 
     private:
+        /**
+         * @brief Create login for user
+         * 
+         */
         void getLogin();
 
     public:
@@ -31,6 +52,13 @@ class User{
         std::string getPatronymic(){return this->patronymic;}
 
     public:
+        /**
+         * @brief перегрузка оператора вывода в поток для объекта User
+         * 
+         * @param os поток
+         * @param obj Объект пользователя (User)
+         * @return std::ostream& 
+         */
         friend std::ostream& operator<<(std::ostream& os, const User& obj);
 };
 
