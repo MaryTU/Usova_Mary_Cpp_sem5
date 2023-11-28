@@ -10,7 +10,6 @@
 #include <map>
 #include <sstream>
 #include <tuple>
-
 #include <iomanip>
 
 #include "lib/nlohmann/json.hpp"
@@ -76,12 +75,32 @@ std::string cp1251_to_utf8(const char *str){
     return res;
 }
 
+/**
+ * @brief Находит срез пользоватлеей старше введенного в консоль возраста
+ * 
+ * @param users коллекция пользователей
+ */
 void getUserForAge(std::vector<User> users);
 
+/**
+ * @brief Подсчитывает количество активных и неактивных пользователей, количество однофамильцев и полных тесок.
+ * 
+ * @param users коллекция пользователей
+ */
 void getMultiUserData(std::vector<User> users);
 
+/**
+ * @brief Cортирetb контейнер объектов по выбранным пользователям полям (не более 3х)
+ * 
+ * @param users коллекция пользователей
+ */
 void multiSort(std::vector<User> users);
 
+/**
+ * @brief Поиск по контенеру объектов на основании введенного ФИО пользователя
+ * 
+ * @param users коллекция пользователей
+ */
 void findUser(std::vector<User> users);
 
 int main(){
